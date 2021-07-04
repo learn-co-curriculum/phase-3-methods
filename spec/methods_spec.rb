@@ -1,9 +1,12 @@
+require_relative 'spec_helper'
+require_relative '../methods.rb'
+
 describe 'methods' do
 
   describe 'greet_programmer' do
   
     it 'outputs the string "Hello, programmer!"' do
-      expect { greet_programmer }.to output(a_string_including("Hello World!")).to_stdout
+      expect { greet_programmer }.to output(a_string_including("Hello, programmer!")).to_stdout
     end
     
   end
@@ -42,11 +45,11 @@ describe 'methods' do
 
   describe 'halve' do
     
-    it 'returns half of the given number' do
+    it 'returns half of the given integer' do
       expect(halve(6)).to be(3)
     end
 
-    it 'returns nil if not given a number' do
+    it 'returns nil if not given a integer' do
       expect(halve("six")).to be(nil)
     end
 
