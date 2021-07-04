@@ -348,17 +348,17 @@ on implicit returns; for example, if we wanted to use a [guard clause][] and exi
 a function early if a certain condition isn't met:
 
 ```rb
-def reverse_string(string)
-  if string.class != String
+def reverse_name(name)
+  if name.class != String
     return nil
   end
 
-  string.reverse
+  name.reverse
 end
 
-reverse_string("Bob Ross")
+reverse_name("Bob Ross")
 # => "ssoR boB"
-reverse_string(123)
+reverse_name(123)
 # => nil
 ```
 
