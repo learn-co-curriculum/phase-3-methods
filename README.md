@@ -135,11 +135,35 @@ say_hello
 # => "hello"
 ```
 
-Removing parentheses from the method calls can make your code more pleasant to
-look at, and in general, this approach is preferred by Rubyists; so you will get
-used to seeing methods written this way. As you're getting started, just keep
-this in the back of your mind, and remember to ask the question: "Is this a
-variable, or is this a method?"
+In certain contexts, removing parentheses from the method calls can make your
+code more pleasant to look at. You might also see some Domain Specific Languages
+(DSLs) that prefer to omit parentheses. You've probably already seen a little
+bit of RSpec's DSL in the test files, for example:
+
+```rb
+describe "MyRubyThing" do
+  it "runs" do
+    # test here
+  end
+end
+```
+
+`describe` and `it` are just methods, so the above could have been written:
+
+```rb
+describe("MyRubyThing") do
+  it("runs") do
+    # test here
+  end
+end
+```
+
+But I think you'll agree that it looks nicer (and is easier to read) without the
+parentheses.
+
+As you're getting started, just keep the fact that **parentheses are optional**
+in the back of your mind, and remember to ask yourself the question when looking
+at code: "Is this a variable, or is this a method?"
 
 ## Method Arguments
 
