@@ -27,14 +27,13 @@ function myFunction(param) {
 As a quick recap of the syntax here:
 
 - The **`function` keyword** identifies this code as a function.
-- `myFunction` is a **variable** we can use to refer to the function from
+- `myFunction` is a **variable name** we can use to refer to the function from
   elsewhere in our code, written in camel case by convention.
-- The parentheses `()` after the name give a space where we can define
+- The parentheses `()` after the function name give a space where we can define
   **parameters** for our function.
 - `param` is the variable name given to our function's parameter; it will be
-  assigned a value when the function is invoked.
-- To define the body of the function, we use curly brackets (`{ }`) in the
-  function definition.
+  assigned a value when the function is invoked and passed an argument.
+- To define the body of the function, we use curly brackets (`{ }`).
 - `console.log` is a method that will output information to the terminal;
   remember, this is _different_ from a function's **return value**.
 - The `return` keyword is needed when we want our function to return a value
@@ -71,9 +70,9 @@ There are a few key differences in the syntax here:
 - Parameters are still defined in parentheses, after the method name.
 - Instead of curly parentheses, use the `end` keyword to identify where the
   method ends.
-- In Ruby, whatever the **last line** of a method is will be its return value.
-  You **can** use the `return` keyword to explicitly identify the return value
-  of a method, but Rubyists tend to rely on the implicit return instead.
+- In Ruby, whatever the **last line of a method is will be its return value**.
+  You can use the `return` keyword to explicitly identify the return value of a
+  method, but Rubyists tend to rely on the implicit return instead.
 
 Run IRB, and copy/paste the method definition above into your IRB session. Then,
 run the method:
@@ -86,15 +85,21 @@ my_method_return_value
 # => 2
 ```
 
+When the `my_method` method is called, you'll see the output from the `puts`
+statement in the terminal, followed by the return value. The return value, `2`,
+is then saved to the variable `my_method_return_value`.
+
 > Why are they called methods in Ruby as opposed to functions? If you recall
 > from Object Oriented JavaScript, the difference between a method and a
 > function is that a **method** is a special sub-category of functions that must
 > be called on some object. In Ruby, every method we define &mdash; even when
 > it's not defined explicitly "on an object" or as part of a class definition
-> &mdash; is still actually defined on a built-in Ruby object: the `main`
+> &mdash; is still actually defined on a built-in Ruby object: the global `main`
 > object, which you'll see referenced in error messages like "NameError
-> (undefined local variable or method \`my_var' for main:Object)". Read more
-> about [Ruby's Main Object here][ruby main] if you're curious!
+> (undefined local variable or method 'my_var' for main:Object)". `main` is
+> roughly equivalent to the global object in JavaScript (the window in the
+> browser); you can see for yourself by entering IRB and typing `self`. Read
+> more about [Ruby's Main Object here][ruby main] if you're curious!
 
 [ruby main]: https://codequizzes.wordpress.com/2014/04/23/rubys-main-object-top-level-context/
 
@@ -111,8 +116,8 @@ my_method 1
 ```
 
 This syntax is a point of confusion for developers new to Ruby, since it can
-make it a bit less clear when using code whether you're invoking a method or
-using a variable. Consider the following method:
+make it a bit less clear when using code whether you're invoking a **method** or
+using a **variable**. Consider the following method:
 
 ```rb
 def say_hello
@@ -135,11 +140,35 @@ say_hello
 # => "hello"
 ```
 
-Removing parentheses from the method calls can make your code more pleasant to
-look at, and in general, this approach is preferred by Rubyists; so you will get
-used to seeing methods written this way. As you're getting started, just keep
-this in the back of your mind, and remember to ask the question: "Is this a
-variable, or is this a method?"
+In certain contexts, removing parentheses from the method calls can make your
+code more pleasant to look at. You might also see some Domain Specific Languages
+(DSLs) that prefer to omit parentheses. You've probably already seen a little
+bit of RSpec's DSL in the test files, for example:
+
+```rb
+describe "MyRubyThing" do
+  it "runs" do
+    # test here
+  end
+end
+```
+
+`describe` and `it` are just methods, so the above could have been written:
+
+```rb
+describe("MyRubyThing") do
+  it("runs") do
+    # test here
+  end
+end
+```
+
+But I think you'll agree that it looks nicer (and is easier to read) without the
+parentheses.
+
+As you're getting started, just keep the fact that **parentheses are optional**
+in the back of your mind, and remember to ask yourself the question when looking
+at code: "Is this a variable, or is this a method?"
 
 ## Method Arguments
 
@@ -252,7 +281,7 @@ machine you just put in two arguments, the number (C7) and your money. We
 already know how to use arguments, but then your vending machine might do two
 things. One, it will make a noise saying that everything worked, beep beep. Then
 it gives you the soda. The soda is the return type. But those beeps? Are you
-able to do anything with them? Nope! That's like puts: it just tells you stuff
+able to do anything with them? Nope! That's like `puts`: it just tells you stuff
 and then goes into the ether! Gone forever.
 
 Every method in Ruby returns a value by default. This returned value will be the
@@ -364,7 +393,7 @@ reverse_name(123)
 
 [guard clause]: https://devblast.com/b/what-are-guard-clauses
 
-## Exercise
+## Instructions
 
 In the `js/index.js` file, there are four functions defined in JavaScript. Your
 job is to recreate the functionality of those functions by writing methods in
@@ -372,6 +401,25 @@ Ruby that will accomplish the same thing.
 
 Write your code in `methods.rb`. Run `learn test`, and use the tests along with
 the code in `js/index.js` to guide your work.
+
+1. Define a method `greet_programmer` that takes no arguments. It should output
+   the string "Hello, programmer!" to the terminal with `puts`.
+
+1. Define a method `greet` that takes one argument, a name. It should output
+   the string "Hello, name!" (with "name" being whatever value was passed as an
+   argument) to the terminal with `puts`.
+
+1. Define a method `greet_with_default` that takes one argument, a name. It
+   should output the string "Hello, name!" (with "name" being whatever value was
+   passed as an argument) to the terminal with `puts`. If no arguments are
+   passed in, it should output the string "Hello, programmer!".
+
+1. Define a method `add` that takes two numbers as arguments and **returns** the
+   sum of those two numbers.
+
+1. Define a method `halve` that takes one number as an argument and **returns**
+   the that number's value, divided by two. If the argument is **not** an
+   integer, it should return `nil` and not throw an error.
 
 ## Conclusion
 
