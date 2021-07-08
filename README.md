@@ -120,13 +120,28 @@ make it a bit less clear when using code whether you're invoking a **method** or
 using a **variable**. Consider the following method:
 
 ```rb
+def say_hello()
+  "hello!"
+end
+```
+
+Parentheses are optional when defining the method, so we could also write this
+method like so:
+
+```rb
 def say_hello
   "hello!"
 end
 ```
 
-You could run this method by placing parentheses at the end, like you would in
-JavaScript:
+[The convention in Ruby][method parens] is to use parentheses as part of a
+method definition when it takes parameters, and to omit them when it has no
+parameters.
+
+[method parens]: https://rubystyle.guide/#method-parens
+
+You could **run** this method by placing parentheses at the end, like you would
+in JavaScript:
 
 ```rb
 say_hello()
