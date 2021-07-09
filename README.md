@@ -85,8 +85,8 @@ my_method_return_value
 # => 2
 ```
 
-When the `my_method` method is called, you'll see the output from the `puts`
-statement in the terminal, followed by the return value. The return value, `2`,
+When the `#my_method` method is called, you'll see the output from the `#puts`
+method in the terminal, followed by the return value. The return value, `2`,
 is then saved to the variable `my_method_return_value`.
 
 > Why are they called methods in Ruby as opposed to functions? If you recall
@@ -168,7 +168,7 @@ describe "MyRubyThing" do
 end
 ```
 
-`describe` and `it` are just methods, so the above could have been written:
+`#describe` and `#it` are just methods, so the above could have been written:
 
 ```rb
 describe("MyRubyThing") do
@@ -265,7 +265,7 @@ both) of these things:
   change; or what they output to the terminal; or what they write to a file;
   etc)
 
-Writing output to the terminal using `console.log` or `puts` is a _side effect_
+Writing output to the terminal using `console.log` or `#puts` is a _side effect_
 of a function: it's distinct from the function's _return value_.
 
 Consider these two JavaScript functions:
@@ -296,7 +296,7 @@ machine you just put in two arguments, the number (C7) and your money. We
 already know how to use arguments, but then your vending machine might do two
 things. One, it will make a noise saying that everything worked, beep beep. Then
 it gives you the soda. The soda is the return type. But those beeps? Are you
-able to do anything with them? Nope! That's like `puts`: it just tells you stuff
+able to do anything with them? Nope! That's like `#puts`: it just tells you stuff
 and then goes into the ether! Gone forever.
 
 Every method in Ruby returns a value by default. This returned value will be the
@@ -317,7 +317,7 @@ sum2 = add_and_return(2, 2)
 # => 4
 ```
 
-The return value of the `add_and_log` method is `nil`, because `puts` returns
+The return value of the `#add_and_log` method is `nil`, because `#puts` returns
 `nil`.
 
 Say you're the best painter in the world, Bob Ross. To make a method that just
@@ -357,7 +357,7 @@ end
 ```
 
 The method would instead print "Bob Ross" and return `nil`. This is because the
-last line that was evaluated was `puts ...` and the return value of a `puts` is
+last line that was evaluated was `puts ...` and the return value of a `#puts` is
 always `nil`.
 
 ### The Return Keyword
@@ -417,22 +417,22 @@ Ruby that will accomplish the same thing.
 Write your code in `methods.rb`. Run `learn test`, and use the tests along with
 the code in `js/index.js` to guide your work.
 
-1. Define a method `greet_programmer` that takes no arguments. It should output
-   the string "Hello, programmer!" to the terminal with `puts`.
+1. Define a method `#greet_programmer` that takes no arguments. It should output
+   the string "Hello, programmer!" to the terminal with `#puts`.
 
-1. Define a method `greet` that takes one argument, a name. It should output
+1. Define a method `#greet` that takes one argument, a name. It should output
    the string "Hello, name!" (with "name" being whatever value was passed as an
-   argument) to the terminal with `puts`.
+   argument) to the terminal with `#puts`.
 
-1. Define a method `greet_with_default` that takes one argument, a name. It
+1. Define a method `#greet_with_default` that takes one argument, a name. It
    should output the string "Hello, name!" (with "name" being whatever value was
-   passed as an argument) to the terminal with `puts`. If no arguments are
+   passed as an argument) to the terminal with `#puts`. If no arguments are
    passed in, it should output the string "Hello, programmer!".
 
-1. Define a method `add` that takes two numbers as arguments and **returns** the
+1. Define a method `#add` that takes two numbers as arguments and **returns** the
    sum of those two numbers.
 
-1. Define a method `halve` that takes one number as an argument and **returns**
+1. Define a method `#halve` that takes one number as an argument and **returns**
    the that number's value, divided by two. If the argument is **not** an
    integer, it should return `nil` and not throw an error.
 
