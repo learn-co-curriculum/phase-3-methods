@@ -92,9 +92,9 @@ is then saved to the variable `my_method_return_value`.
 > Why are they called methods in Ruby as opposed to functions? If you recall
 > from Object Oriented JavaScript, the difference between a method and a
 > function is that a **method** is a special sub-category of functions that must
-> be called on some object. In Ruby, every method we define &mdash; even when
+> be called on some object. In Ruby, every method we define — even when
 > it's not defined explicitly "on an object" or as part of a class definition
-> &mdash; is still actually defined on a built-in Ruby object: the global `main`
+> — is still actually defined on a built-in Ruby object: the global `main`
 > object, which you'll see referenced in error messages like "NameError
 > (undefined local variable or method 'my_var' for main:Object)". `main` is
 > roughly equivalent to the global object in JavaScript (the window in the
