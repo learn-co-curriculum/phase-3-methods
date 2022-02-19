@@ -22,4 +22,3 @@ def halve(number)
     number / 2
 end
 
-
