@@ -21,7 +21,7 @@ end
 
 
 def halve(number)
-    return nil unless number.is_a?(Numeric)
+    return nil unless number.is_a?(Integer)
   
-    number / 2.0
+    number / 2
   end
