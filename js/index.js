@@ -4,7 +4,7 @@
   => "Hello, programmer!"
 */
 function greetProgrammer() {
-  console.log("Hello, programmer!");
+  console.log("Hello, programmer!")
 }
 
 /*
@@ -13,7 +13,7 @@ function greetProgrammer() {
   => "Hello, Naureen!"
 */
 function greet(name) {
-  console.log(`Hello, ${name}!`);
+  console.log(`Hello, ${name}!`)
 }
 
 /*
@@ -26,7 +26,7 @@ function greet(name) {
   => "Hello, Sunny!"
 */
 function greetWithDefault(name = "programmer") {
-  console.log(`Hello, ${name}!`);
+  console.log(`Hello, ${name}!`)
 }
 
 /*
@@ -36,7 +36,7 @@ function greetWithDefault(name = "programmer") {
   => 3
 */
 function add(num1, num2) {
-  return num1 + num2;
+  return num1 + num2
 }
 
 /*
@@ -50,7 +50,7 @@ function add(num1, num2) {
   => null
 */
 function halve(number) {
-  if (typeof number !== "number") return null;
+  if (typeof number !== "number") return null
 
-  return number / 2;
+  return number / 2
 }
