@@ -1,0 +1,15 @@
+function myFunction(param) {
+  console.log("Running myFunction");
+  return param + 1;
+}
+
+const myFunctionReturnValue = myFunction(1);
+
+console.log(myFunctionReturnValue);
+
+
+ruby 
+def my_method(param)
+  puts "Running my_method"
+  param + 1
+end
